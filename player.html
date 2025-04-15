@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BR Play Pro - Player</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header>
+    <h1>BR Play Pro - Player</h1>
+    <nav>
+      <a href="index.html">Canais</a>
+    </nav>
+  </header>
+
+  <main class="player-main">
+    <section id="video-player">
+      <h2>Reprodução</h2>
+      <video id="main-video" controls></video>
+      <div class="player-controls">
+        <button id="prev-channel">Anterior</button>
+        <button id="next-channel">Próximo</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BR Play Pro</p>
+  </footer>
+
+  <script src="player.js"></script>
+</body>
+</html>

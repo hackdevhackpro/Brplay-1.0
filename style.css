@@ -1,199 +1,164 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    background-color: #141414;
-    color: #e0e0e0;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  background-color: #111;
+  color: #f0f0f0;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #000;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #fff;
+  font-size: 2em;
+  color: #e50914;
 }
 
 nav a {
-    color: #bbb;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
 }
 
 nav a:hover {
-    color: #fff;
+  color: #e50914;
 }
 
 main {
-    display: flex;
-    padding: 30px;
-    gap: 30px;
-}
-
-#channel-list {
-    width: 350px;
-    padding: 20px;
-    background-color: #222;
-    border-radius: 8px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 #channel-list h2 {
-    margin-top: 0;
-    color: #fff;
-    border-bottom: 2px solid #444;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  border-left: 5px solid #e50914;
+  padding-left: 10px;
 }
 
 .channel-group {
-    margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .channel-group h3 {
-    color: #fff;
-    border-bottom: 1px solid #555;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
-#channels, #canais-abertos, #filmes, #series, #infantil {
-    list-style: none;
-    padding: 0;
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
 }
 
-#channels li.channel-item,
-#canais-abertos li.channel-item,
-#filmes li.channel-item,
-#series li.channel-item,
-#infantil li.channel-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #333;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out;
-    border-radius: 5px;
+.channel-item {
+  flex: 0 0 auto;
+  width: 180px;
+  background-color: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  cursor: pointer;
 }
 
-#channels li.channel-item:last-child,
-#canais-abertos li.channel-item:last-child,
-#filmes li.channel-item:last-child,
-#series li.channel-item:last-child,
-#infantil li.channel-item:last-child {
-    border-bottom: none;
-}
-
-#channels li.channel-item:hover,
-#canais-abertos li.channel-item:hover,
-#filmes li.channel-item:hover,
-#series li.channel-item:hover,
-#infantil li.channel-item:hover {
-    background-color: #333;
-    color: #fff;
-    transform: scale(1.02);
+.channel-item:hover {
+  transform: scale(1.05);
 }
 
 .channel-thumbnail {
-    width: 60px;
-    height: 40px;
-    background-color: #444;
-    border-radius: 4px;
-    margin-right: 15px;
-    flex-shrink: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
 }
 
 .channel-name {
-    font-weight: bold;
-}
-
-#video-player {
-    flex-grow: 1;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-}
-
-#video-player h2 {
-    color: #fff;
-    margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 10px;
-    width: 100%;
-    text-align: left;
-}
-
-#main-video {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    background-color: #000;
-    border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.95em;
+  color: #fff;
 }
 
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #000;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: #777;
-    font-size: 0.9em;
+  text-align: center;
+  padding: 20px;
+  background-color: #000;
+  color: #666;
+  font-size: 0.9em;
 }
 
-/* Estilos Responsivos */
-@media (max-width: 768px) {
-    main {
-        flex-direction: column; /* Empilhar as seções em telas menores */
-    }
-
-    #channel-list {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-
-    #video-player {
-        width: 100%;
-    }
+::-webkit-scrollbar {
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
 }
 
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-
-    nav a {
-        margin: 0 5px;
-        font-size: 0.9em;
-    }
-
-    #channel-list h2 {
-        font-size: 1.2em;
-    }
+/* PLAYER PAGE */
+.player-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
-@media (min-width: 1200px) {
-    main {
-        max-width: 1200px;
-        margin: 0 auto; /* Centralizar o conteúdo em telas grandes */
-    }
+#video-player {
+  background-color: #222;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  width: 90%;
+  max-width: 1200px;
+}
+
+#video-player h2 {
+  color: #eee;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #444;
+  padding-bottom: 12px;
+  font-size: 1.8em;
+  text-align: left;
+}
+
+#main-video {
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  border-radius: 5px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+}
+
+.player-controls {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.player-controls button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #555;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.player-controls button:hover {
+  background-color: #777;
 }
