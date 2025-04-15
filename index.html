@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Play Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+    <header>
+        <h1>BR Play</h1>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Canais</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="channel-list">
+            <h2>Canais</h2>
+
+            <div class="channel-group">
+                <h3>Canais Abertos</h3>
+                <ul id="canais-abertos"></ul>
+            </div>
+
+            <div class="channel-group">
+                <h3>Filmes</h3>
+                <ul id="filmes"></ul>
+            </div>
+
+            <div class="channel-group">
+                <h3>Séries</h3>
+                <ul id="series"></ul>
+            </div>
+
+            <div class="channel-group">
+                <h3>Infantil</h3>
+                <ul id="infantil"></ul>
+            </div>
+        </section>
+
+        <section id="video-player">
+            <h2>Reprodução</h2>
+            <video id="main-video" controls width="100%" height="auto"></video>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 BR Play</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
