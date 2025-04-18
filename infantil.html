@@ -1,39 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canais Infantis - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais Infantis 🎈 - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    select#channel { display:block; margin:1rem auto; padding:0.5rem; border-radius:5px; }
+    iframe#tvPlayer { display:block; margin:1rem auto; width:90%; height:60vh; border:none; }
+    .nav-buttons { display:flex; justify-content:center; gap:1rem; margin:1rem auto; }
+    .nav-buttons button { background:#e50914; color:#fff; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; }
+    a.back { display:block; text-align:center; margin-top:1rem; color:#e50914; text-decoration:none; }
+  </style>
 </head>
 <body>
-    <h1>Canais Infantis 🎈</h1>
-
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/cartoonnetwork/">Cartoon Network</option>
-        <option value="https://embedcanaistv.com/cartoonito/">Cartoonito</option>
-        <option value="https://embedcanaistv.com/discoverykids/">Discovery Kids</option>
-        <option value="https://embedcanaistv.com/disneychannel/">Disney Channel</option>
-        <option value="https://embedcanaistv.com/dreamworkschannel/">DreamWorks Channel</option>
-        <option value="https://embedcanaistv.com/gloob/">Gloob</option>
-        <option value="https://embedcanaistv.com/gloobinho/">Gloobinho</option>
-        <option value="https://embedcanaistv.com/nickjr/">Nick Jr.</option>
-        <option value="https://embedcanaistv.com/nickelodeon/">Nickelodeon</option>
-        <option value="https://embedcanaistv.com/tooncast/">Tooncast</option>
-        <option value="https://embedcanaistv.com/tvratimbum/">TV Rá-Tim-Bum</option>
-        <option value="https://embedcanaistv.com/zoomookids/">Zoomoo Kids</option>
-    </select>
-
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
-
-    <script>
+  <header><h1 style="text-align:center;">Canais Infantis 🎈</h1></header>
+  <select id="channel" onchange="changeChannel()">
+  <option value="https://embedcanaistv.com/cartoonnetwork/">Cartoon Network</option>
+  <option value="https://embedcanaistv.com/cartoonito/">Cartoonito</option>
+  <option value="https://embedcanaistv.com/discoverykids/">Discovery Kids</option>
+  <option value="https://embedcanaistv.com/disneychannel/">Disney Channel</option>
+  <option value="https://embedcanaistv.com/dreamworkschannel/">DreamWorks Channel</option>
+  <option value="https://embedcanaistv.com/gloob/">Gloob</option>
+  <option value="https://embedcanaistv.com/gloobinho/">Gloobinho</option>
+  <option value="https://embedcanaistv.com/nickjr/">Nick Jr.</option>
+  <option value="https://embedcanaistv.com/nickelodeon/">Nickelodeon</option>
+  <option value="https://embedcanaistv.com/tooncast/">Tooncast</option>
+  <option value="https://embedcanaistv.com/tvratimbum/">TV Rá-Tim-Bum</option>
+  <option value="https://embedcanaistv.com/zoomookids/">Zoomoo Kids</option>
+  </select>
+  <iframe id="tvPlayer" allowfullscreen></iframe>
+  <div class="nav-buttons">
+    <button id="prevBtn" onclick="prevChannel()">⏮️</button>
+    <button id="nextBtn" onclick="nextChannel()">⏭️</button>
+  </div>
+  <script>
+    const channelNames = ['Cartoon Network', 'Cartoonito', 'Discovery Kids', 'Disney Channel', 'DreamWorks Channel', 'Gloob', 'Gloobinho', 'Nick Jr.', 'Nickelodeon', 'Tooncast', 'TV Rá-Tim-Bum', 'Zoomoo Kids'];
+    const channelUrls = ['https://embedcanaistv.com/cartoonnetwork/', 'https://embedcanaistv.com/cartoonito/', 'https://embedcanaistv.com/discoverykids/', 'https://embedcanaistv.com/disneychannel/', 'https://embedcanaistv.com/dreamworkschannel/', 'https://embedcanaistv.com/gloob/', 'https://embedcanaistv.com/gloobinho/', 'https://embedcanaistv.com/nickjr/', 'https://embedcanaistv.com/nickelodeon/', 'https://embedcanaistv.com/tooncast/', 'https://embedcanaistv.com/tvratimbum/', 'https://embedcanaistv.com/zoomookids/'];
     function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
+      const sel = document.getElementById('channel');
+      const idx = sel.selectedIndex;
+      document.getElementById('tvPlayer').src = channelUrls[idx];
+      updateNav(idx);
     }
-    </script>
-
-    <a href="index.html">Voltar ao início</a>
+    function prevChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex>0) { sel.selectedIndex--; changeChannel(); }
+    }
+    function nextChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex<channelNames.length-1) { sel.selectedIndex++; changeChannel(); }
+    }
+    function updateNav(idx) {
+      const p = document.getElementById('prevBtn'), n = document.getElementById('nextBtn');
+      if(idx>0) { p.textContent='⏮️ '+channelNames[idx-1]; p.disabled=false; } else { p.textContent='⏮️'; p.disabled=true; }
+      if(idx<channelNames.length-1) { n.textContent=channelNames[idx+1]+' ⏭️'; n.disabled=false; } else { n.textContent='⏭️'; n.disabled=true; }
+    }
+    document.addEventListener('DOMContentLoaded', changeChannel);
+  </script>
+  <a href="index.html" class="back">Voltar ao início</a>
 </body>
 </html>
