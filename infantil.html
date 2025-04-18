@@ -30,6 +30,44 @@
 .share-buttons button:hover {
   background: #666;
 }
+
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+.share-buttons button {
+  background: #e50914;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-buttons button:hover {
+  background: #ff4c4c;
+}
+</style>
+</style>
+
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+.share-buttons button {
+  background: #e50914;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-buttons button:hover {
+  background: #ff4c4c;
+}
 </style>
 </style>
 </head>
@@ -52,8 +90,13 @@
   <iframe id="tvPlayer" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 <div class="share-buttons">
+  <button onclick="castToTV()">📺 Assistir via Web Video Cast</button>
+</div>
+
+
+<div class="share-buttons">
   <button onclick="castToTV()">📺 Assistir na Smart TV</button>
-  <button onclick="copyToClipboard()">🔗 Copiar Link</button>
+  
 </div>
 
   <div class="nav-buttons">
@@ -91,6 +134,15 @@ function castToTV() {
   const url = player.src;
   window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
 }
+</script>
+
+
+<script>
+function castToTV() {
+  const player = document.getElementById("tvPlayer");
+  const url = player.src;
+  window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
+}
 
 function copyToClipboard() {
   const url = document.getElementById("tvPlayer").src;
@@ -99,6 +151,15 @@ function copyToClipboard() {
     .catch(() => alert("❌ Erro ao copiar o link."));
 }
 </script>
+
+<script>
+function castToTV() {
+  const player = document.getElementById("tvPlayer");
+  const url = player.src;
+  window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
+}
+</script>
+
 
   <a href="index.html" class="back">Voltar ao início</a>
 </body>
