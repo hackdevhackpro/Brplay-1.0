@@ -1,51 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BR Play Pro - Canais</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR Play - TV Online</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>BR Play Pro</h1>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Canais</a>
-    </nav>
-  </header>
+    <header>
+        <h1>BR Play 📺</h1>
+        <input type="text" id="search" placeholder="Buscar canal..." onkeyup="searchChannel()">
+        <button onclick="toggleDarkMode()">🌓 Modo Escuro</button>
+    </header>
 
-  <main>
-    <section id="channel-list">
-      <h2>Canais</h2>
+    <section id="channel-container">
+        <div class="category">
+            <button onclick="toggleList('esportes')">Esportes ⏷</button>
+            <ul id="esportes" class="channel-list">
+                <li><a href="esportes.html">Canais de Esportes</a></li>
+            </ul>
+        </div>
 
-      <div class="channel-group">
-        <h3>Canais Abertos</h3>
-        <div class="carousel" id="canais-abertos"></div>
-      </div>
+        <div class="category">
+            <button onclick="toggleList('abertos')">Canais Abertos ⏷</button>
+            <ul id="abertos" class="channel-list">
+                <li><a href="abertos.html">Canais Abertos</a></li>
+            </ul>
+        </div>
 
-      <div class="channel-group">
-        <h3>Filmes</h3>
-        <div class="carousel" id="filmes"></div>
-      </div>
+        <div class="category">
+            <button onclick="toggleList('filmes_series')">Filmes e Séries ⏷</button>
+            <ul id="filmes_series" class="channel-list">
+                <li><a href="filmes_series.html">Filmes e Séries</a></li>
+            </ul>
+        </div>
 
-      <div class="channel-group">
-        <h3>Séries</h3>
-        <div class="carousel" id="series"></div>
-      </div>
+        <div class="category">
+            <button onclick="toggleList('variedades')">Variedades ⏷</button>
+            <ul id="variedades" class="channel-list">
+                <li><a href="variedades.html">Variedades</a></li>
+            </ul>
+        </div>
 
-      <div class="channel-group">
-        <h3>Infantil</h3>
-        <div class="carousel" id="infantil"></div>
-      </div>
+        <div class="category">
+            <button onclick="toggleList('noticias')">Notícias ⏷</button>
+            <ul id="noticias" class="channel-list">
+                <li><a href="noticias.html">Notícias</a></li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <button onclick="toggleList('infantil')">Infantil ⏷</button>
+            <ul id="infantil" class="channel-list">
+                <li><a href="infantil.html">Canais Infantis</a></li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <button onclick="toggleList('geeks')">Geek ⏷</button>
+            <ul id="geeks" class="channel-list">
+                <li><a href="geeks.html">Canais Geeks</a></li>
+            </ul>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 BR Play Pro</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

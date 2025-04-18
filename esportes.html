@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esportes - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais de Esportes 🏆</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/amazonprimevideo/">Amazon Prime Video</option>
+        <option value="https://embedcanaistv.com/bandsports/">BandSports</option>
+        <option value="https://embedcanaistv.com/combate/">Combate</option>
+        <option value="https://embedcanaistv.com/cazetv/">CazeTV</option>
+        <option value="https://embedcanaistv.com/disneyplus/">Disney+</option>
+        <option value="https://embedcanaistv.com/espn/">ESPN</option>
+        <option value="https://embedcanaistv.com/espn2/">ESPN 2</option>
+        <option value="https://embedcanaistv.com/espn3/">ESPN 3</option>
+        <option value="https://embedcanaistv.com/espn4/">ESPN 4</option>
+        <option value="https://embedcanaistv.com/espn5/">ESPN 5</option>
+        <option value="https://embedcanaistv.com/espn6/">ESPN 6</option>
+        <option value="https://embedcanaistv.com/max/">Max</option>
+        <option value="https://embedcanaistv.com/max2/">Max 2</option>
+        <option value="https://embedcanaistv.com/max3/">Max 3</option>
+        <option value="https://embedcanaistv.com/max4/">Max 4</option>
+        <option value="https://embedcanaistv.com/nossofutebol/">Nosso Futebol</option>
+        <option value="https://embedcanaistv.com/paramountplus/">Paramount+</option>
+        <option value="https://embedcanaistv.com/premiereclubes/">Premiere Clubes</option>
+        <option value="https://embedcanaistv.com/premiere2/">Premiere 2</option>
+        <option value="https://embedcanaistv.com/premiere3/">Premiere 3</option>
+        <option value="https://embedcanaistv.com/premiere4/">Premiere 4</option>
+        <option value="https://embedcanaistv.com/premiere5/">Premiere 5</option>
+        <option value="https://embedcanaistv.com/premiere6/">Premiere 6</option>
+        <option value="https://embedcanaistv.com/premiere7/">Premiere 7</option>
+        <option value="https://embedcanaistv.com/premiere8/">Premiere 8</option>
+        <option value="https://embedcanaistv.com/sportv/">Sportv</option>
+        <option value="https://embedcanaistv.com/sportv2/">Sportv 2</option>
+        <option value="https://embedcanaistv.com/sportv3/">Sportv 3</option>
+        <option value="https://embedcanaistv.com/starplus/">Star+</option>
+        <option value="https://embedcanaistv.com/tntsports/">TNT Sports</option>
+        <option value="https://embedcanaistv.com/tntsports2/">TNT Sports 2</option>
+        <option value="https://embedcanaistv.com/tntsports3/">TNT Sports 3</option>
+        <option value="https://embedcanaistv.com/ufcfightpass/">UFC Fight Pass</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais de Notícias 📰</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/bandnews/">Band News</option>
+        <option value="https://embedcanaistv.com/cnnbrasil/">CNN Brasil</option>
+        <option value="https://embedcanaistv.com/globonews/">GloboNews</option>
+        <option value="https://embedcanaistv.com/jovempannews/">Jovem Pan News</option>
+        <option value="https://embedcanaistv.com/recordnews/">Record News</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>

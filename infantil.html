@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canais Infantis - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais Infantis 🎈</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/cartoonnetwork/">Cartoon Network</option>
+        <option value="https://embedcanaistv.com/cartoonito/">Cartoonito</option>
+        <option value="https://embedcanaistv.com/discoverykids/">Discovery Kids</option>
+        <option value="https://embedcanaistv.com/disneychannel/">Disney Channel</option>
+        <option value="https://embedcanaistv.com/dreamworkschannel/">DreamWorks Channel</option>
+        <option value="https://embedcanaistv.com/gloob/">Gloob</option>
+        <option value="https://embedcanaistv.com/gloobinho/">Gloobinho</option>
+        <option value="https://embedcanaistv.com/nickjr/">Nick Jr.</option>
+        <option value="https://embedcanaistv.com/nickelodeon/">Nickelodeon</option>
+        <option value="https://embedcanaistv.com/tooncast/">Tooncast</option>
+        <option value="https://embedcanaistv.com/tvratimbum/">TV Rá-Tim-Bum</option>
+        <option value="https://embedcanaistv.com/zoomookids/">Zoomoo Kids</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>

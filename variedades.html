@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variedades - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais de Variedades 🎭</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/animalplanet/">Animal Planet</option>
+        <option value="https://embedcanaistv.com/arte1/">Arte 1</option>
+        <option value="https://embedcanaistv.com/canalbrasil/">Canal Brasil</option>
+        <option value="https://embedcanaistv.com/comedycentral/">Comedy Central</option>
+        <option value="https://embedcanaistv.com/discoverychannel/">Discovery Channel</option>
+        <option value="https://embedcanaistv.com/discoveryhh/">Discovery Home & Health</option>
+        <option value="https://embedcanaistv.com/discoveryscience/">Discovery Science</option>
+        <option value="https://embedcanaistv.com/discoverytheater/">Discovery Theater</option>
+        <option value="https://embedcanaistv.com/discoveryworld/">Discovery World</option>
+        <option value="https://embedcanaistv.com/discoveryid/">Discovery ID</option>
+        <option value="https://embedcanaistv.com/discoveryturbo/">Discovery Turbo</option>
+        <option value="https://embedcanaistv.com/fishtv/">Fish TV</option>
+        <option value="https://embedcanaistv.com/foodnetwork/">Food Network</option>
+        <option value="https://embedcanaistv.com/fueltv/">Fuel TV</option>
+        <option value="https://embedcanaistv.com/gnt/">GNT</option>
+        <option value="https://embedcanaistv.com/hgtv/">HGTV</option>
+        <option value="https://embedcanaistv.com/history/">History</option>
+        <option value="https://embedcanaistv.com/history2/">History 2</option>
+        <option value="https://embedcanaistv.com/lifetime/">Lifetime</option>
+        <option value="https://embedcanaistv.com/multishow/">Multishow</option>
+        <option value="https://embedcanaistv.com/mtv/">MTV</option>
+        <option value="https://embedcanaistv.com/nationalgeografic/">National Geographic</option>
+        <option value="https://embedcanaistv.com/tlc/">TLC</option>
+        <option value="https://embedcanaistv.com/viva/">Viva</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>

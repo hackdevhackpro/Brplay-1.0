@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canais Geeks - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais Geeks 🕹️</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/adultswim/">Adult Swim</option>
+        <option value="https://embedcanaistv.com/24h-cavernadodragao/">24h Caverna do Dragão</option>
+        <option value="https://embedcanaistv.com/24h-chapolin/">24h Chapolin</option>
+        <option value="https://embedcanaistv.com/24h-chaves/">24h Chaves</option>
+        <option value="https://embedcanaistv.com/24h-dragonballz/">24h Dragon Ball Z</option>
+        <option value="https://embedcanaistv.com/24h-naruto/">24h Naruto</option>
+        <option value="https://embedcanaistv.com/24h-cavalheirosdozodiaco/">24h Cavaleiros do Zodíaco</option>
+        <option value="https://embedcanaistv.com/24h-simpsons/">24h Simpsons</option>
+        <option value="https://embedcanaistv.com/24h-patrulhacanina/">24h Patrulha Canina</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>

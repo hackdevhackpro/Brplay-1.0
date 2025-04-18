@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes e Séries - BR Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Canais de Filmes e Séries 🎬</h1>
+
+    <label for="channel">Escolha um canal:</label>
+    <select id="channel" onchange="changeChannel()">
+        <option value="https://embedcanaistv.com/aee/">A&E</option>
+        <option value="https://embedcanaistv.com/adultswim/">Adult Swim</option>
+        <option value="https://embedcanaistv.com/amc/">AMC</option>
+        <option value="https://embedcanaistv.com/axn/">AXN</option>
+        <option value="https://embedcanaistv.com/cinecanal/">Cinecanal</option>
+        <option value="https://embedcanaistv.com/cinemax/">Cinemax</option>
+        <option value="https://embedcanaistv.com/darkflix/">Darkflix</option>
+        <option value="https://embedcanaistv.com/darkmatter/">Dark Matter</option>
+        <option value="https://embedcanaistv.com/fx/">FX</option>
+        <option value="https://embedcanaistv.com/hbo/">HBO</option>
+        <option value="https://embedcanaistv.com/hbo2/">HBO 2</option>
+        <option value="https://embedcanaistv.com/hbofamily/">HBO Family</option>
+        <option value="https://embedcanaistv.com/hbomundi/">HBO Mundi</option>
+        <option value="https://embedcanaistv.com/hboplus/">HBO Plus</option>
+        <option value="https://embedcanaistv.com/hbopop/">HBO Pop</option>
+        <option value="https://embedcanaistv.com/hbosignature/">HBO Signature</option>
+        <option value="https://embedcanaistv.com/hboxtreme/">HBO Xtreme</option>
+        <option value="https://embedcanaistv.com/megapix/">Megapix</option>
+        <option value="https://embedcanaistv.com/moviesphere/">Moviesphere</option>
+        <option value="https://embedcanaistv.com/sonychannel/">Sony Channel</option>
+        <option value="https://embedcanaistv.com/space/">Space</option>
+        <option value="https://embedcanaistv.com/starchannel/">Star Channel</option>
+        <option value="https://embedcanaistv.com/studiouniversal/">Studio Universal</option>
+        <option value="https://embedcanaistv.com/tcaction/">TC Action</option>
+        <option value="https://embedcanaistv.com/tccult/">TC Cult</option>
+        <option value="https://embedcanaistv.com/tcfun/">TC Fun</option>
+        <option value="https://embedcanaistv.com/tcpipoca/">TC Pipoca</option>
+        <option value="https://embedcanaistv.com/tcpremium/">TC Premium</option>
+        <option value="https://embedcanaistv.com/tctouch/">TC Touch</option>
+        <option value="https://embedcanaistv.com/tnt/">TNT</option>
+        <option value="https://embedcanaistv.com/tntnovelas/">TNT Novelas</option>
+        <option value="https://embedcanaistv.com/tntseries/">TNT Séries</option>
+        <option value="https://embedcanaistv.com/universaltv/">Universal TV</option>
+        <option value="https://embedcanaistv.com/usa/">USA Network</option>
+        <option value="https://embedcanaistv.com/warner/">Warner</option>
+    </select>
+
+    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+
+    <script>
+    function changeChannel() {
+        var selectedChannel = document.getElementById("channel").value;
+        document.getElementById("tvPlayer").src = selectedChannel;
+    }
+    </script>
+
+    <a href="index.html">Voltar ao início</a>
+</body>
+</html>
