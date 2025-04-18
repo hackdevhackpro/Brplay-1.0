@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canais Geeks - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais Geeks 🕹️ - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Canais Geeks 🕹️</h1>
+  <header class="navbar"><h1>Canais Geeks 🕹️</h1></header>
+  <main class="channel-grid">
 
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/adultswim/">Adult Swim</option>
-        <option value="https://embedcanaistv.com/24h-cavernadodragao/">24h Caverna do Dragão</option>
-        <option value="https://embedcanaistv.com/24h-chapolin/">24h Chapolin</option>
-        <option value="https://embedcanaistv.com/24h-chaves/">24h Chaves</option>
-        <option value="https://embedcanaistv.com/24h-dragonballz/">24h Dragon Ball Z</option>
-        <option value="https://embedcanaistv.com/24h-naruto/">24h Naruto</option>
-        <option value="https://embedcanaistv.com/24h-cavalheirosdozodiaco/">24h Cavaleiros do Zodíaco</option>
-        <option value="https://embedcanaistv.com/24h-simpsons/">24h Simpsons</option>
-        <option value="https://embedcanaistv.com/24h-patrulhacanina/">24h Patrulha Canina</option>
-    </select>
+    <div class="channel-card">
+      <a href="geeks_adult_swim.html">
+        <img src="logos/geeks/adult_swim.png" alt="Adult Swim logo">
+        <p>Adult Swim</p>
+      </a>
+    </div>
 
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+    <div class="channel-card">
+      <a href="geeks_24h_caverna_do_dragão.html">
+        <img src="logos/geeks/24h_caverna_do_dragão.png" alt="24h Caverna do Dragão logo">
+        <p>24h Caverna do Dragão</p>
+      </a>
+    </div>
 
-    <script>
-    function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
-    }
-    </script>
+    <div class="channel-card">
+      <a href="geeks_24h_chapolin.html">
+        <img src="logos/geeks/24h_chapolin.png" alt="24h Chapolin logo">
+        <p>24h Chapolin</p>
+      </a>
+    </div>
 
-    <a href="index.html">Voltar ao início</a>
+    <div class="channel-card">
+      <a href="geeks_24h_chaves.html">
+        <img src="logos/geeks/24h_chaves.png" alt="24h Chaves logo">
+        <p>24h Chaves</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="geeks_24h_dragon_ball_z.html">
+        <img src="logos/geeks/24h_dragon_ball_z.png" alt="24h Dragon Ball Z logo">
+        <p>24h Dragon Ball Z</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="geeks_24h_naruto.html">
+        <img src="logos/geeks/24h_naruto.png" alt="24h Naruto logo">
+        <p>24h Naruto</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="geeks_24h_cavaleiros_do_zodíaco.html">
+        <img src="logos/geeks/24h_cavaleiros_do_zodíaco.png" alt="24h Cavaleiros do Zodíaco logo">
+        <p>24h Cavaleiros do Zodíaco</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="geeks_24h_simpsons.html">
+        <img src="logos/geeks/24h_simpsons.png" alt="24h Simpsons logo">
+        <p>24h Simpsons</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="geeks_24h_patrulha_canina.html">
+        <img src="logos/geeks/24h_patrulha_canina.png" alt="24h Patrulha Canina logo">
+        <p>24h Patrulha Canina</p>
+      </a>
+    </div>
+
+  </main>
+  <a href="index.html" class="back-btn">Voltar</a>
 </body>
 </html>

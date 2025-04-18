@@ -1,69 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BR Play - TV Online</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BR Play - Categorias</title><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>BR Play 📺</h1>
-        <input type="text" id="search" placeholder="Buscar canal..." onkeyup="searchChannel()">
-        <button onclick="toggleDarkMode()">🌓 Modo Escuro</button>
-    </header>
-
-    <section id="channel-container">
-        <div class="category">
-            <button onclick="toggleList('esportes')">Esportes ⏷</button>
-            <ul id="esportes" class="channel-list">
-                <li><a href="esportes.html">Canais de Esportes</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('abertos')">Canais Abertos ⏷</button>
-            <ul id="abertos" class="channel-list">
-                <li><a href="abertos.html">Canais Abertos</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('filmes_series')">Filmes e Séries ⏷</button>
-            <ul id="filmes_series" class="channel-list">
-                <li><a href="filmes_series.html">Filmes e Séries</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('variedades')">Variedades ⏷</button>
-            <ul id="variedades" class="channel-list">
-                <li><a href="variedades.html">Variedades</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('noticias')">Notícias ⏷</button>
-            <ul id="noticias" class="channel-list">
-                <li><a href="noticias.html">Notícias</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('infantil')">Infantil ⏷</button>
-            <ul id="infantil" class="channel-list">
-                <li><a href="infantil.html">Canais Infantis</a></li>
-            </ul>
-        </div>
-
-        <div class="category">
-            <button onclick="toggleList('geeks')">Geek ⏷</button>
-            <ul id="geeks" class="channel-list">
-                <li><a href="geeks.html">Canais Geeks</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <script src="script.js"></script>
-</body>
-</html>
+  <header class="navbar"><h1>BR Play 📺</h1></header>
+  <nav class="category-nav">
+  <a href="abertos.html" class="category-link">Canais Abertos 📡</a>
+  <a href="esportes.html" class="category-link">Canais de Esportes 🏆</a>
+  <a href="filmes_series.html" class="category-link">Canais de Filmes e Séries 🎬</a>
+  <a href="geeks.html" class="category-link">Canais Geeks 🕹️</a>
+</nav></body></html>

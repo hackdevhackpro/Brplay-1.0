@@ -1,62 +1,261 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filmes e Séries - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais de Filmes e Séries 🎬 - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Canais de Filmes e Séries 🎬</h1>
+  <header class="navbar"><h1>Canais de Filmes e Séries 🎬</h1></header>
+  <main class="channel-grid">
 
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/aee/">A&E</option>
-        <option value="https://embedcanaistv.com/adultswim/">Adult Swim</option>
-        <option value="https://embedcanaistv.com/amc/">AMC</option>
-        <option value="https://embedcanaistv.com/axn/">AXN</option>
-        <option value="https://embedcanaistv.com/cinecanal/">Cinecanal</option>
-        <option value="https://embedcanaistv.com/cinemax/">Cinemax</option>
-        <option value="https://embedcanaistv.com/darkflix/">Darkflix</option>
-        <option value="https://embedcanaistv.com/darkmatter/">Dark Matter</option>
-        <option value="https://embedcanaistv.com/fx/">FX</option>
-        <option value="https://embedcanaistv.com/hbo/">HBO</option>
-        <option value="https://embedcanaistv.com/hbo2/">HBO 2</option>
-        <option value="https://embedcanaistv.com/hbofamily/">HBO Family</option>
-        <option value="https://embedcanaistv.com/hbomundi/">HBO Mundi</option>
-        <option value="https://embedcanaistv.com/hboplus/">HBO Plus</option>
-        <option value="https://embedcanaistv.com/hbopop/">HBO Pop</option>
-        <option value="https://embedcanaistv.com/hbosignature/">HBO Signature</option>
-        <option value="https://embedcanaistv.com/hboxtreme/">HBO Xtreme</option>
-        <option value="https://embedcanaistv.com/megapix/">Megapix</option>
-        <option value="https://embedcanaistv.com/moviesphere/">Moviesphere</option>
-        <option value="https://embedcanaistv.com/sonychannel/">Sony Channel</option>
-        <option value="https://embedcanaistv.com/space/">Space</option>
-        <option value="https://embedcanaistv.com/starchannel/">Star Channel</option>
-        <option value="https://embedcanaistv.com/studiouniversal/">Studio Universal</option>
-        <option value="https://embedcanaistv.com/tcaction/">TC Action</option>
-        <option value="https://embedcanaistv.com/tccult/">TC Cult</option>
-        <option value="https://embedcanaistv.com/tcfun/">TC Fun</option>
-        <option value="https://embedcanaistv.com/tcpipoca/">TC Pipoca</option>
-        <option value="https://embedcanaistv.com/tcpremium/">TC Premium</option>
-        <option value="https://embedcanaistv.com/tctouch/">TC Touch</option>
-        <option value="https://embedcanaistv.com/tnt/">TNT</option>
-        <option value="https://embedcanaistv.com/tntnovelas/">TNT Novelas</option>
-        <option value="https://embedcanaistv.com/tntseries/">TNT Séries</option>
-        <option value="https://embedcanaistv.com/universaltv/">Universal TV</option>
-        <option value="https://embedcanaistv.com/usa/">USA Network</option>
-        <option value="https://embedcanaistv.com/warner/">Warner</option>
-    </select>
+    <div class="channel-card">
+      <a href="filmes_series_a&e.html">
+        <img src="logos/filmes_series/a&e.png" alt="A&E logo">
+        <p>A&E</p>
+      </a>
+    </div>
 
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+    <div class="channel-card">
+      <a href="filmes_series_adult_swim.html">
+        <img src="logos/filmes_series/adult_swim.png" alt="Adult Swim logo">
+        <p>Adult Swim</p>
+      </a>
+    </div>
 
-    <script>
-    function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
-    }
-    </script>
+    <div class="channel-card">
+      <a href="filmes_series_amc.html">
+        <img src="logos/filmes_series/amc.png" alt="AMC logo">
+        <p>AMC</p>
+      </a>
+    </div>
 
-    <a href="index.html">Voltar ao início</a>
+    <div class="channel-card">
+      <a href="filmes_series_axn.html">
+        <img src="logos/filmes_series/axn.png" alt="AXN logo">
+        <p>AXN</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_cinecanal.html">
+        <img src="logos/filmes_series/cinecanal.png" alt="Cinecanal logo">
+        <p>Cinecanal</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_cinemax.html">
+        <img src="logos/filmes_series/cinemax.png" alt="Cinemax logo">
+        <p>Cinemax</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_darkflix.html">
+        <img src="logos/filmes_series/darkflix.png" alt="Darkflix logo">
+        <p>Darkflix</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_dark_matter.html">
+        <img src="logos/filmes_series/dark_matter.png" alt="Dark Matter logo">
+        <p>Dark Matter</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_fx.html">
+        <img src="logos/filmes_series/fx.png" alt="FX logo">
+        <p>FX</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo.html">
+        <img src="logos/filmes_series/hbo.png" alt="HBO logo">
+        <p>HBO</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_2.html">
+        <img src="logos/filmes_series/hbo_2.png" alt="HBO 2 logo">
+        <p>HBO 2</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_family.html">
+        <img src="logos/filmes_series/hbo_family.png" alt="HBO Family logo">
+        <p>HBO Family</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_mundi.html">
+        <img src="logos/filmes_series/hbo_mundi.png" alt="HBO Mundi logo">
+        <p>HBO Mundi</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_plus.html">
+        <img src="logos/filmes_series/hbo_plus.png" alt="HBO Plus logo">
+        <p>HBO Plus</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_pop.html">
+        <img src="logos/filmes_series/hbo_pop.png" alt="HBO Pop logo">
+        <p>HBO Pop</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_signature.html">
+        <img src="logos/filmes_series/hbo_signature.png" alt="HBO Signature logo">
+        <p>HBO Signature</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_hbo_xtreme.html">
+        <img src="logos/filmes_series/hbo_xtreme.png" alt="HBO Xtreme logo">
+        <p>HBO Xtreme</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_megapix.html">
+        <img src="logos/filmes_series/megapix.png" alt="Megapix logo">
+        <p>Megapix</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_moviesphere.html">
+        <img src="logos/filmes_series/moviesphere.png" alt="Moviesphere logo">
+        <p>Moviesphere</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_sony_channel.html">
+        <img src="logos/filmes_series/sony_channel.png" alt="Sony Channel logo">
+        <p>Sony Channel</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_space.html">
+        <img src="logos/filmes_series/space.png" alt="Space logo">
+        <p>Space</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_star_channel.html">
+        <img src="logos/filmes_series/star_channel.png" alt="Star Channel logo">
+        <p>Star Channel</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_studio_universal.html">
+        <img src="logos/filmes_series/studio_universal.png" alt="Studio Universal logo">
+        <p>Studio Universal</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_action.html">
+        <img src="logos/filmes_series/tc_action.png" alt="TC Action logo">
+        <p>TC Action</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_cult.html">
+        <img src="logos/filmes_series/tc_cult.png" alt="TC Cult logo">
+        <p>TC Cult</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_fun.html">
+        <img src="logos/filmes_series/tc_fun.png" alt="TC Fun logo">
+        <p>TC Fun</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_pipoca.html">
+        <img src="logos/filmes_series/tc_pipoca.png" alt="TC Pipoca logo">
+        <p>TC Pipoca</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_premium.html">
+        <img src="logos/filmes_series/tc_premium.png" alt="TC Premium logo">
+        <p>TC Premium</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tc_touch.html">
+        <img src="logos/filmes_series/tc_touch.png" alt="TC Touch logo">
+        <p>TC Touch</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tnt.html">
+        <img src="logos/filmes_series/tnt.png" alt="TNT logo">
+        <p>TNT</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tnt_novelas.html">
+        <img src="logos/filmes_series/tnt_novelas.png" alt="TNT Novelas logo">
+        <p>TNT Novelas</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_tnt_series.html">
+        <img src="logos/filmes_series/tnt_series.png" alt="TNT Séries logo">
+        <p>TNT Séries</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_universal_tv.html">
+        <img src="logos/filmes_series/universal_tv.png" alt="Universal TV logo">
+        <p>Universal TV</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_usa_network.html">
+        <img src="logos/filmes_series/usa_network.png" alt="USA Network logo">
+        <p>USA Network</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="filmes_series_warner.html">
+        <img src="logos/filmes_series/warner.png" alt="Warner logo">
+        <p>Warner</p>
+      </a>
+    </div>
+
+  </main>
+  <a href="index.html" class="back-btn">Voltar</a>
 </body>
 </html>

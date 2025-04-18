@@ -1,41 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canais Abertos - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais Abertos 📡 - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Canais Abertos 📡</h1>
+  <header class="navbar"><h1>Canais Abertos 📡</h1></header>
+  <main class="channel-grid">
 
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/bandsp/">Band SP</option>
-        <option value="https://embedcanaistv.com/globoba/">Globo Bahia</option>
-        <option value="https://embedcanaistv.com/globodf/">Globo DF</option>
-        <option value="https://embedcanaistv.com/globomg/">Globo MG</option>
-        <option value="https://embedcanaistv.com/globorj/">Globo RJ</option>
-        <option value="https://embedcanaistv.com/globors/">Globo RS</option>
-        <option value="https://embedcanaistv.com/globosp/">Globo SP</option>
-        <option value="https://embedcanaistv.com/recordmg/">Record MG</option>
-        <option value="https://embedcanaistv.com/recordrj/">Record RJ</option>
-        <option value="https://embedcanaistv.com/recordsp/">Record SP</option>
-        <option value="https://embedcanaistv.com/redetv/">RedeTV</option>
-        <option value="https://embedcanaistv.com/redevida/">Rede Vida</option>
-        <option value="https://embedcanaistv.com/sbtsp/">SBT SP</option>
-        <option value="https://embedcanaistv.com/tvcultura/">TV Cultura</option>
-    </select>
+    <div class="channel-card">
+      <a href="abertos_band_sp.html">
+        <img src="logos/abertos/band_sp.png" alt="Band SP logo">
+        <p>Band SP</p>
+      </a>
+    </div>
 
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
+    <div class="channel-card">
+      <a href="abertos_globo_bahia.html">
+        <img src="logos/abertos/globo_bahia.png" alt="Globo Bahia logo">
+        <p>Globo Bahia</p>
+      </a>
+    </div>
 
-    <script>
-    function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
-    }
-    </script>
+    <div class="channel-card">
+      <a href="abertos_globo_df.html">
+        <img src="logos/abertos/globo_df.png" alt="Globo DF logo">
+        <p>Globo DF</p>
+      </a>
+    </div>
 
-    <a href="index.html">Voltar ao início</a>
+    <div class="channel-card">
+      <a href="abertos_globo_mg.html">
+        <img src="logos/abertos/globo_mg.png" alt="Globo MG logo">
+        <p>Globo MG</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_globo_rj.html">
+        <img src="logos/abertos/globo_rj.png" alt="Globo RJ logo">
+        <p>Globo RJ</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_globo_rs.html">
+        <img src="logos/abertos/globo_rs.png" alt="Globo RS logo">
+        <p>Globo RS</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_globo_sp.html">
+        <img src="logos/abertos/globo_sp.png" alt="Globo SP logo">
+        <p>Globo SP</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_record_mg.html">
+        <img src="logos/abertos/record_mg.png" alt="Record MG logo">
+        <p>Record MG</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_record_rj.html">
+        <img src="logos/abertos/record_rj.png" alt="Record RJ logo">
+        <p>Record RJ</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_record_sp.html">
+        <img src="logos/abertos/record_sp.png" alt="Record SP logo">
+        <p>Record SP</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_redetv.html">
+        <img src="logos/abertos/redetv.png" alt="RedeTV logo">
+        <p>RedeTV</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_rede_vida.html">
+        <img src="logos/abertos/rede_vida.png" alt="Rede Vida logo">
+        <p>Rede Vida</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_sbt_sp.html">
+        <img src="logos/abertos/sbt_sp.png" alt="SBT SP logo">
+        <p>SBT SP</p>
+      </a>
+    </div>
+
+    <div class="channel-card">
+      <a href="abertos_tv_cultura.html">
+        <img src="logos/abertos/tv_cultura.png" alt="TV Cultura logo">
+        <p>TV Cultura</p>
+      </a>
+    </div>
+
+  </main>
+  <a href="index.html" class="back-btn">Voltar</a>
 </body>
 </html>
