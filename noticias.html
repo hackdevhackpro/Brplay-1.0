@@ -1,32 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notícias - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais de Notícias 📰 - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    select#channel { display:block; margin:1rem auto; padding:0.5rem; border-radius:5px; }
+    iframe#tvPlayer { display:block; margin:1rem auto; width:90%; height:60vh; border:none; }
+    .nav-buttons { display:flex; justify-content:center; gap:1rem; margin:1rem auto; }
+    .nav-buttons button { background:#e50914; color:#fff; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; }
+    a.back { display:block; text-align:center; margin-top:1rem; color:#e50914; text-decoration:none; }
+  
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.share-buttons button {
+  background: #444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-buttons button:hover {
+  background: #666;
+}
+</style>
+</style>
 </head>
 <body>
-    <h1>Canais de Notícias 📰</h1>
+  <header><h1 style="text-align:center;">Canais de Notícias 📰</h1></header>
+  <select id="channel" onchange="changeChannel()">
+  <option value="https://embedcanaistv.com/bandnews/">Band News</option>
+  <option value="https://embedcanaistv.com/cnnbrasil/">CNN Brasil</option>
+  <option value="https://embedcanaistv.com/globonews/">GloboNews</option>
+  <option value="https://embedcanaistv.com/jovempannews/">Jovem Pan News</option>
+  <option value="https://embedcanaistv.com/recordnews/">Record News</option>
+  </select>
+  <iframe id="tvPlayer" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/bandnews/">Band News</option>
-        <option value="https://embedcanaistv.com/cnnbrasil/">CNN Brasil</option>
-        <option value="https://embedcanaistv.com/globonews/">GloboNews</option>
-        <option value="https://embedcanaistv.com/jovempannews/">Jovem Pan News</option>
-        <option value="https://embedcanaistv.com/recordnews/">Record News</option>
-    </select>
+<div class="share-buttons">
+  <button onclick="castToTV()">📺 Assistir na Smart TV</button>
+  <button onclick="copyToClipboard()">🔗 Copiar Link</button>
+</div>
 
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
-
-    <script>
+  <div class="nav-buttons">
+    <button id="prevBtn" onclick="prevChannel()">⏮️</button>
+    <button id="nextBtn" onclick="nextChannel()">⏭️</button>
+  </div>
+  <script>
+    const channelNames = ['Band News', 'CNN Brasil', 'GloboNews', 'Jovem Pan News', 'Record News'];
+    const channelUrls = ['https://embedcanaistv.com/bandnews/', 'https://embedcanaistv.com/cnnbrasil/', 'https://embedcanaistv.com/globonews/', 'https://embedcanaistv.com/jovempannews/', 'https://embedcanaistv.com/recordnews/'];
     function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
+      const sel = document.getElementById('channel');
+      const idx = sel.selectedIndex;
+      document.getElementById('tvPlayer').src = channelUrls[idx] + '?autoplay=1';
+      updateNav(idx);
     }
-    </script>
+    function prevChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex>0) { sel.selectedIndex--; changeChannel(); }
+    }
+    function nextChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex<channelNames.length-1) { sel.selectedIndex++; changeChannel(); }
+    }
+    function updateNav(idx) {
+      const p = document.getElementById('prevBtn'), n = document.getElementById('nextBtn');
+      if(idx>0) { p.textContent='⏮️ '+channelNames[idx-1]; p.disabled=false; } else { p.textContent='⏮️'; p.disabled=true; }
+      if(idx<channelNames.length-1) { n.textContent=channelNames[idx+1]+' ⏭️'; n.disabled=false; } else { n.textContent='⏭️'; n.disabled=true; }
+    }
+    document.addEventListener('DOMContentLoaded', changeChannel);
+  </script>
 
-    <a href="index.html">Voltar ao início</a>
+<script>
+function castToTV() {
+  const player = document.getElementById("tvPlayer");
+  const url = player.src;
+  window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
+}
+
+function copyToClipboard() {
+  const url = document.getElementById("tvPlayer").src;
+  navigator.clipboard.writeText(url)
+    .then(() => alert("🔗 Link copiado para área de transferência!"))
+    .catch(() => alert("❌ Erro ao copiar o link."));
+}
+</script>
+
+  <a href="index.html" class="back">Voltar ao início</a>
 </body>
 </html>

@@ -11,7 +11,27 @@
     .nav-buttons { display:flex; justify-content:center; gap:1rem; margin:1rem auto; }
     .nav-buttons button { background:#e50914; color:#fff; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; }
     a.back { display:block; text-align:center; margin-top:1rem; color:#e50914; text-decoration:none; }
-  </style>
+  
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.share-buttons button {
+  background: #444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-buttons button:hover {
+  background: #666;
+}
+</style>
+</style>
 </head>
 <body>
   <header><h1 style="text-align:center;">Canais de Filmes e Séries 🎬</h1></header>
@@ -52,7 +72,13 @@
   <option value="https://embedcanaistv.com/usa/">USA Network</option>
   <option value="https://embedcanaistv.com/warner/">Warner</option>
   </select>
-  <iframe id="tvPlayer" allowfullscreen></iframe>
+  <iframe id="tvPlayer" allow="autoplay; fullscreen" allowfullscreen></iframe>
+
+<div class="share-buttons">
+  <button onclick="castToTV()">📺 Assistir na Smart TV</button>
+  <button onclick="copyToClipboard()">🔗 Copiar Link</button>
+</div>
+
   <div class="nav-buttons">
     <button id="prevBtn" onclick="prevChannel()">⏮️</button>
     <button id="nextBtn" onclick="nextChannel()">⏭️</button>
@@ -63,7 +89,7 @@
     function changeChannel() {
       const sel = document.getElementById('channel');
       const idx = sel.selectedIndex;
-      document.getElementById('tvPlayer').src = channelUrls[idx];
+      document.getElementById('tvPlayer').src = channelUrls[idx] + '?autoplay=1';
       updateNav(idx);
     }
     function prevChannel() {
@@ -81,6 +107,22 @@
     }
     document.addEventListener('DOMContentLoaded', changeChannel);
   </script>
+
+<script>
+function castToTV() {
+  const player = document.getElementById("tvPlayer");
+  const url = player.src;
+  window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
+}
+
+function copyToClipboard() {
+  const url = document.getElementById("tvPlayer").src;
+  navigator.clipboard.writeText(url)
+    .then(() => alert("🔗 Link copiado para área de transferência!"))
+    .catch(() => alert("❌ Erro ao copiar o link."));
+}
+</script>
+
   <a href="index.html" class="back">Voltar ao início</a>
 </body>
 </html>

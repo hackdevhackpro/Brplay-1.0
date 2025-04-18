@@ -1,51 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variedades - BR Play</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canais de Variedades 🎭 - BR Play</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    select#channel { display:block; margin:1rem auto; padding:0.5rem; border-radius:5px; }
+    iframe#tvPlayer { display:block; margin:1rem auto; width:90%; height:60vh; border:none; }
+    .nav-buttons { display:flex; justify-content:center; gap:1rem; margin:1rem auto; }
+    .nav-buttons button { background:#e50914; color:#fff; border:none; padding:0.5rem 1rem; border-radius:5px; cursor:pointer; }
+    a.back { display:block; text-align:center; margin-top:1rem; color:#e50914; text-decoration:none; }
+  
+<style>
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.share-buttons button {
+  background: #444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-buttons button:hover {
+  background: #666;
+}
+</style>
+</style>
 </head>
 <body>
-    <h1>Canais de Variedades 🎭</h1>
+  <header><h1 style="text-align:center;">Canais de Variedades 🎭</h1></header>
+  <select id="channel" onchange="changeChannel()">
+  <option value="https://embedcanaistv.com/animalplanet/">Animal Planet</option>
+  <option value="https://embedcanaistv.com/arte1/">Arte 1</option>
+  <option value="https://embedcanaistv.com/canalbrasil/">Canal Brasil</option>
+  <option value="https://embedcanaistv.com/comedycentral/">Comedy Central</option>
+  <option value="https://embedcanaistv.com/discoverychannel/">Discovery Channel</option>
+  <option value="https://embedcanaistv.com/discoveryhh/">Discovery Home & Health</option>
+  <option value="https://embedcanaistv.com/discoveryscience/">Discovery Science</option>
+  <option value="https://embedcanaistv.com/discoverytheater/">Discovery Theater</option>
+  <option value="https://embedcanaistv.com/discoveryworld/">Discovery World</option>
+  <option value="https://embedcanaistv.com/discoveryid/">Discovery ID</option>
+  <option value="https://embedcanaistv.com/discoveryturbo/">Discovery Turbo</option>
+  <option value="https://embedcanaistv.com/fishtv/">Fish TV</option>
+  <option value="https://embedcanaistv.com/foodnetwork/">Food Network</option>
+  <option value="https://embedcanaistv.com/fueltv/">Fuel TV</option>
+  <option value="https://embedcanaistv.com/gnt/">GNT</option>
+  <option value="https://embedcanaistv.com/hgtv/">HGTV</option>
+  <option value="https://embedcanaistv.com/history/">History</option>
+  <option value="https://embedcanaistv.com/history2/">History 2</option>
+  <option value="https://embedcanaistv.com/lifetime/">Lifetime</option>
+  <option value="https://embedcanaistv.com/multishow/">Multishow</option>
+  <option value="https://embedcanaistv.com/mtv/">MTV</option>
+  <option value="https://embedcanaistv.com/nationalgeografic/">National Geographic</option>
+  <option value="https://embedcanaistv.com/tlc/">TLC</option>
+  <option value="https://embedcanaistv.com/viva/">Viva</option>
+  </select>
+  <iframe id="tvPlayer" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
-    <label for="channel">Escolha um canal:</label>
-    <select id="channel" onchange="changeChannel()">
-        <option value="https://embedcanaistv.com/animalplanet/">Animal Planet</option>
-        <option value="https://embedcanaistv.com/arte1/">Arte 1</option>
-        <option value="https://embedcanaistv.com/canalbrasil/">Canal Brasil</option>
-        <option value="https://embedcanaistv.com/comedycentral/">Comedy Central</option>
-        <option value="https://embedcanaistv.com/discoverychannel/">Discovery Channel</option>
-        <option value="https://embedcanaistv.com/discoveryhh/">Discovery Home & Health</option>
-        <option value="https://embedcanaistv.com/discoveryscience/">Discovery Science</option>
-        <option value="https://embedcanaistv.com/discoverytheater/">Discovery Theater</option>
-        <option value="https://embedcanaistv.com/discoveryworld/">Discovery World</option>
-        <option value="https://embedcanaistv.com/discoveryid/">Discovery ID</option>
-        <option value="https://embedcanaistv.com/discoveryturbo/">Discovery Turbo</option>
-        <option value="https://embedcanaistv.com/fishtv/">Fish TV</option>
-        <option value="https://embedcanaistv.com/foodnetwork/">Food Network</option>
-        <option value="https://embedcanaistv.com/fueltv/">Fuel TV</option>
-        <option value="https://embedcanaistv.com/gnt/">GNT</option>
-        <option value="https://embedcanaistv.com/hgtv/">HGTV</option>
-        <option value="https://embedcanaistv.com/history/">History</option>
-        <option value="https://embedcanaistv.com/history2/">History 2</option>
-        <option value="https://embedcanaistv.com/lifetime/">Lifetime</option>
-        <option value="https://embedcanaistv.com/multishow/">Multishow</option>
-        <option value="https://embedcanaistv.com/mtv/">MTV</option>
-        <option value="https://embedcanaistv.com/nationalgeografic/">National Geographic</option>
-        <option value="https://embedcanaistv.com/tlc/">TLC</option>
-        <option value="https://embedcanaistv.com/viva/">Viva</option>
-    </select>
+<div class="share-buttons">
+  <button onclick="castToTV()">📺 Assistir na Smart TV</button>
+  <button onclick="copyToClipboard()">🔗 Copiar Link</button>
+</div>
 
-    <iframe id="tvPlayer" width="800" height="450" allowfullscreen frameborder="0"></iframe>
-
-    <script>
+  <div class="nav-buttons">
+    <button id="prevBtn" onclick="prevChannel()">⏮️</button>
+    <button id="nextBtn" onclick="nextChannel()">⏭️</button>
+  </div>
+  <script>
+    const channelNames = ['Animal Planet', 'Arte 1', 'Canal Brasil', 'Comedy Central', 'Discovery Channel', 'Discovery Home & Health', 'Discovery Science', 'Discovery Theater', 'Discovery World', 'Discovery ID', 'Discovery Turbo', 'Fish TV', 'Food Network', 'Fuel TV', 'GNT', 'HGTV', 'History', 'History 2', 'Lifetime', 'Multishow', 'MTV', 'National Geographic', 'TLC', 'Viva'];
+    const channelUrls = ['https://embedcanaistv.com/animalplanet/', 'https://embedcanaistv.com/arte1/', 'https://embedcanaistv.com/canalbrasil/', 'https://embedcanaistv.com/comedycentral/', 'https://embedcanaistv.com/discoverychannel/', 'https://embedcanaistv.com/discoveryhh/', 'https://embedcanaistv.com/discoveryscience/', 'https://embedcanaistv.com/discoverytheater/', 'https://embedcanaistv.com/discoveryworld/', 'https://embedcanaistv.com/discoveryid/', 'https://embedcanaistv.com/discoveryturbo/', 'https://embedcanaistv.com/fishtv/', 'https://embedcanaistv.com/foodnetwork/', 'https://embedcanaistv.com/fueltv/', 'https://embedcanaistv.com/gnt/', 'https://embedcanaistv.com/hgtv/', 'https://embedcanaistv.com/history/', 'https://embedcanaistv.com/history2/', 'https://embedcanaistv.com/lifetime/', 'https://embedcanaistv.com/multishow/', 'https://embedcanaistv.com/mtv/', 'https://embedcanaistv.com/nationalgeografic/', 'https://embedcanaistv.com/tlc/', 'https://embedcanaistv.com/viva/'];
     function changeChannel() {
-        var selectedChannel = document.getElementById("channel").value;
-        document.getElementById("tvPlayer").src = selectedChannel;
+      const sel = document.getElementById('channel');
+      const idx = sel.selectedIndex;
+      document.getElementById('tvPlayer').src = channelUrls[idx] + '?autoplay=1';
+      updateNav(idx);
     }
-    </script>
+    function prevChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex>0) { sel.selectedIndex--; changeChannel(); }
+    }
+    function nextChannel() {
+      const sel = document.getElementById('channel');
+      if(sel.selectedIndex<channelNames.length-1) { sel.selectedIndex++; changeChannel(); }
+    }
+    function updateNav(idx) {
+      const p = document.getElementById('prevBtn'), n = document.getElementById('nextBtn');
+      if(idx>0) { p.textContent='⏮️ '+channelNames[idx-1]; p.disabled=false; } else { p.textContent='⏮️'; p.disabled=true; }
+      if(idx<channelNames.length-1) { n.textContent=channelNames[idx+1]+' ⏭️'; n.disabled=false; } else { n.textContent='⏭️'; n.disabled=true; }
+    }
+    document.addEventListener('DOMContentLoaded', changeChannel);
+  </script>
 
-    <a href="index.html">Voltar ao início</a>
+<script>
+function castToTV() {
+  const player = document.getElementById("tvPlayer");
+  const url = player.src;
+  window.open(`https://webvideocast.app?url=${encodeURIComponent(url)}`, "_blank");
+}
+
+function copyToClipboard() {
+  const url = document.getElementById("tvPlayer").src;
+  navigator.clipboard.writeText(url)
+    .then(() => alert("🔗 Link copiado para área de transferência!"))
+    .catch(() => alert("❌ Erro ao copiar o link."));
+}
+</script>
+
+  <a href="index.html" class="back">Voltar ao início</a>
 </body>
 </html>
